@@ -1,0 +1,35 @@
+@import './variables.scss';
+@import './element-ui.scss';
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: $primary-color;
+  padding: 0px, 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-container{
+  min-height: 100%;
+}
+
+.content-container {
+  margin-top: 200px;
+}
