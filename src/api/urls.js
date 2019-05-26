@@ -6,8 +6,8 @@ const host = env.HOST.replace(/"/g, '')
 const account = host + 'account/'
 
 export default {
-  login: account + '/login/',
-  logout: account + '/logout/',
-  register: account + '/register/',
+  login: host + 'login/',
+  logout: account + 'logout/',
+  register: account + 'register/',
   test: account + 'test/'
 }

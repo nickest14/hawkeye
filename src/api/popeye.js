@@ -20,7 +20,7 @@ function register (user) {
 }
 
 function fetchtest (user) {
-  return axios.get(urls.test)
+  return axios.get(urls.test, qs.stringify(user))
 }
 
 export {

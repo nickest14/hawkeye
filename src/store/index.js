@@ -1,25 +1,22 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import member from './modules/member'
+
 import actions from './actions'
-import mutations from './mutations'
 import getters from './getters'
+import mutations from './mutations'
+
 Vue.use(Vuex)
 
-const isDebugMode = process.env.NODE_ENV !== 'production'
-Vue.config.debug = isDebugMode
-Vue.config.devtools = isDebugMode
-
-export default new Vuex.Store({
+export const store = new Vuex.Store({
   state: {
-    test: '123',
-    user: {
-      logined: 'pending',
-      account_type: undefined,
-      chatInfo: null,
-      unsettled: 0
-    }
+    value: 555,
+    hiiii: 123
   },
-  actions,
+  getters,
   mutations,
-  getters
+  actions,
+  modules: {
+    member
+  }
 })
