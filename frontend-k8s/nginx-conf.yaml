@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-nginx-conf
+  namespace: staging-frontend
+data:
+  default.conf: |-
+    server {
+        listen 80 default_server;
+        server_name _;
+        location /health{
+            return 200;
+        }
+        location /{
+            return 403;
+        }
+        location /.well-known {
+            root    /usr/src/app/dist-const;
+        }
+    }
+    server {
+        listen 8000;
+        server_name _;
+        return 200;
+    }  
+
+
+  staging.conf: |-
+    server {
+        listen 80;
+        server_name staging.codingcmk.com;
+
+        location / {
+            root   /usr/src/app/dist/staging/;
+            }
+    }
+  
